@@ -14,6 +14,7 @@ typedef struct Node{
  void show_linklist(LinkList *l);
 
 void add_at_beg_linklist(LinkList *l, int data);
+void add_at_last_linklist(LinkList *l, int data);
 
 int main()
 {
@@ -32,7 +33,10 @@ int main()
     // printf("------------------- Added fourth Element to the list -------------------\n");
     show_linklist(l1);
     //printf("------------------- Call showlinklist function -------------------\n");
-
+    add_at_last_linklist(l1, 20);
+    add_at_last_linklist(l1, 30);
+    add_at_last_linklist(l1, 40);
+    show_linklist(l1);
     return(0);
 }
 
@@ -63,6 +67,26 @@ void add_at_beg_linklist(LinkList *l, int data)
     }
 }
 
+// To add a node at last in th eSingle Link list
+void add_at_last_linklist(LinkList *l, int data)
+{
+    Node *new_node, *temp;
+    new_node = malloc(sizeof(Node *));
+    new_node->data = data;
+    new_node->next = NULL;
+    if(l->head == NULL)
+    {
+        l->head = new_node;
+    }
+    else
+    {
+        temp = l->head;
+        while(temp->next !=NULL)
+           temp = temp->next;
+        temp->next= new_node; 
+
+    }
+}
 // To print Link list
 void show_linklist(LinkList *l)
 {
