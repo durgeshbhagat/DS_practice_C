@@ -21,17 +21,17 @@ int main()
     int data;
     init_linklist(&l1);
     show_linklist(l1);
-    printf("------------------- Link list succefully Initialized -------------------\n");
+    // printf("------------------- Link list succefully Initialized -------------------\n");
     add_at_beg_linklist(l1, 2);
-    printf("------------------- Added first Element to the list -------------------\n");
+    // printf("------------------- Added first Element to the list -------------------\n");
     add_at_beg_linklist(l1, 4);
-    printf("------------------- Added second Element to the list -------------------\n");
+    // printf("------------------- Added second Element to the list -------------------\n");
     add_at_beg_linklist(l1, 6);
-    printf("------------------- Added third Element to the list -------------------\n");
+    //printf("------------------- Added third Element to the list -------------------\n");
     add_at_beg_linklist(l1, 8);
-    printf("------------------- Added fourth Element to the list -------------------\n");
+    // printf("------------------- Added fourth Element to the list -------------------\n");
     show_linklist(l1);
-    printf("------------------- Call showlinklist function -------------------\n");
+    //printf("------------------- Call showlinklist function -------------------\n");
 
     return(0);
 }
@@ -52,7 +52,7 @@ void add_at_beg_linklist(LinkList *l, int data)
     new_node->data = data;
     if(l->head==NULL)
     {
-        printf("\t\t\t\t Empty Link list :::::::::\n");
+        //printf("\t\t\t\t Empty Link list :::::::::\n");
         l->head = new_node;
         new_node->next = NULL;
     }
@@ -68,13 +68,13 @@ void show_linklist(LinkList *l)
 {
     Node *temp;
     temp = malloc(sizeof(Node *));
-    printf(" \n\n In the show_linklist function \n\n");
-    printf("head: %p\n  ", l->head);
+    // printf(" \n\n In the show_linklist function \n\n");
+    //printf("head: %p\n  ", l->head);
     if(l->head == NULL)
         printf("\t Empty Single Link list\n");
     else
     {
-        printf("\t \t Inside the else loop:: ");
+        //printf("\t \t Inside the else loop:: ");
         temp = l->head;
         printf("The elements of Single Link list are :: ");
         while(temp!=NULL)
